@@ -10,7 +10,6 @@ class HrEmployee(models.Model):
     overtime_ids= fields.One2many('hr.attendance.heure.supp', 'employee_id', "Heures supplémentaires")
 
     def getWorkInput(self, contract, date_from, date_to):
-        #res = super(HrEmployee, self).getWorkInput(contract, date_from, date_to)
         res = []
         overtimes = self.getOvertime(contract.id, date_from, date_to)
         if overtimes :

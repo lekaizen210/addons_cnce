@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	<data noupdate="1">
+	<data >
 		<record id="rule_impay" model="hr.salary.rule">
 			<field name="name">Jours de impayés</field>
 			<field name="sequence">1</field>
@@ -180,19 +180,19 @@ else :
 			<field name="code">HS15</field>
 			<field name="category_id"  ref="hr_payroll_ci.cat_hsupp"></field>
 			<field name="condition_select">python</field>
-			<field name="condition_python">result = worked_days.HS15 and worked_days.HS15>0</field>
+			<field name="condition_python">result = worked_days.HS15 and worked_days.HS15.number_of_hours>0</field>
 			<field name="amount_select">percentage</field>
 			<field name="amount_percentage_base">BASEH</field>
 			<field name="amount_percentage">115.0</field>
 			<field name="quantity">worked_days.HS15.number_of_hours</field>
 		</record>
 		<record id="rule_hsupp50" model="hr.salary.rule">
-			<field name="name">HEURE SUPPL. 75%</field>
+			<field name="name">HEURE SUPPL. 50%</field>
 			<field name="sequence">210</field>
 			<field name="code">HS50</field>
 			<field name="category_id"  ref="hr_payroll_ci.cat_hsupp"></field>
 			<field name="condition_select">python</field>
-			<field name="condition_python">result = worked_days.HS50 and worked_days.HS50>0</field>
+			<field name="condition_python">result = worked_days.HS50 and worked_days.HS50.number_of_hours>0</field>
 			<field name="amount_select">percentage</field>
 			<field name="amount_percentage_base">BASEH</field>
 			<field name="amount_percentage">150.0</field>
@@ -204,7 +204,7 @@ else :
 			<field name="code">HS75</field>
 			<field name="category_id"  ref="hr_payroll_ci.cat_hsupp"></field>
 			<field name="condition_select">python</field>
-			<field name="condition_python">result = worked_days.HS75 and worked_days.HS75>0</field>
+			<field name="condition_python">result = worked_days.HS75 and worked_days.HS75.number_of_hours>0</field>
 			<field name="amount_select">percentage</field>
 			<field name="amount_percentage_base">BASEH</field>
 			<field name="amount_percentage">175.0</field>
@@ -216,7 +216,7 @@ else :
 			<field name="code">HS100</field>
 			<field name="category_id"  ref="hr_payroll_ci.cat_hsupp"></field>
 			<field name="condition_select">python</field>
-			<field name="condition_python">result = worked_days.HS100 and worked_days.HS100>0</field>
+			<field name="condition_python">result = worked_days.HS100 and worked_days.HS100.number_of_hours>0</field>
 			<field name="amount_select">percentage</field>
 			<field name="amount_percentage_base">BASEH</field>
 			<field name="amount_percentage">175.0</field>
@@ -379,7 +379,7 @@ result = payslip.arrondi(cn - payslip.cumul_cn)
 		<record id="rule_igr" model="hr.salary.rule">
 			<field name="name">Impôt Général sur Revenu (IGR)</field>
 			<field name="sequence">402</field>
-			<field name="code">igr</field>
+			<field name="code">IGR</field>
 			<field name="category_id" ref="hr_payroll_ci.cat_ret_emp"></field>
 			<field name="condition_select">none</field>
 			<field name="amount_select">code</field>
