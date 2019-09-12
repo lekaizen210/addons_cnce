@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record model="hr.payroll.prime" id="prime_transport">
+             <field name="name">Prime de transport</field>
+             <field name="code">TRSP</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="indemite_logement">
+             <field name="name">Indemnité de logement</field>
+             <field name="code">INDML</field>
+             <field name="description">Indemnité versée pour le logement de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="prime_assurance">
+             <field name="name">Prime d'assurance</field>
+             <field name="code">ASSUR</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="prime_fonction">
+             <field name="name">Prime de fonction</field>
+             <field name="code">FONCT</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="prime_responsabilite">
+             <field name="name">Prime de responsabilité</field>
+             <field name="code">PRES</field>
+             <field name="description">la prime versé pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="prime_caburant">
+             <field name="name">Prime de caburant</field>
+             <field name="code">CARBU</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="prime_gratification">
+             <field name="name">Gratification</field>
+             <field name="code">GRATIF</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+         <record model="hr.payroll.prime" id="avantage_nature">
+             <field name="name">Avantage en nature</field>
+             <field name="code">AVTGN</field>
+             <field name="description">la prime versée pour le transport de l'employé</field>
+         </record>
+    </data>
+</openerp>

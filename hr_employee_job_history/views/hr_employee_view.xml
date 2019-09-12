@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="hr_employee_job_history_inherit_form_view">
+        <field name="name">hr.employee.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="inside">
+                <button class="oe_stat_button" name="carrier_view" type="object" icon="fa-list-ol">
+                    <field string="Historique de jobs" name="job_history_count" widget="statinfo"/>
+                </button>
+            </div>
+            <notebook position="inside">
+                <page string="Historiques de poste">
+                    <field name="history_carrier_ids" >
+                        <tree editable="top">
+                            <field name="job_id" />
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </tree>
+                    </field>
+
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

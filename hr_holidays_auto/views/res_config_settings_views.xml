@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="res_config_settings_holidays_auto_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.hr.holidays.extension</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_holidays_extension.res_config_settings_holidays_ext_view_form"/>
+            <field name="arch" type="xml">
+                <div id="hr_holidays_auto" position="inside">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="o_setting_right_pane">
+                            <label for="number_holidays" string="Nombre de jours de congés à atribuer automatquement"/>
+                            <div class="text-muted">
+                            </div>
+                        </div>
+                        <div class="o_setting_left_pane">
+                            <field name="number_holidays"/>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+</odoo>

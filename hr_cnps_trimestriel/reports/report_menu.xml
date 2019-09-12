@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+		
+		<report
+            string="CNPS Trimestriel"
+            id="hr_cnps_trimestriel_report"
+            model="hr.cnps.trimestriel"
+            report_type="qweb-pdf"
+            name="hr_cnps_trimestriel.cnps_trimestriel_report"
+            file="hr_cnps_trimestriel.cnps_trimestriel_report"
+        />
+    
+    </data>
+</openerp>

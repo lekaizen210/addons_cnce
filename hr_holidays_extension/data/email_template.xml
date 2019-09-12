@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <data>
+        <record id="email_template_leave_request" model="mail.template">
+            <field name="name">Leave Request Template</field>
+            <field name="email_from">${(object.company_id.email or'')|safe }</field>
+            <field name="email_to">${(object.holiday_status_id.to_notify_emails or '')|safe}</field>
+            <field name="subject">Rappel demande de conge :  ${object.name}</field>
+            <field name="model_id" ref="model_hr_holidays"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.employee_id.user_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Bonjour ,</p>
+                    <p>La période de congé de M/Mme ${object.name} est prévue du ${object.date_from} au ${object.date_to}. </p>
+                    <p>Cordialement !!!</p>
+                    <p></p>
+                ]]>
+
+            </field>
+        </record>
+
+
+
+        <record id="email_template_leave_refusal" model="mail.template">
+            <field name="name">Leave Request Refusal</field>
+            <field name="email_from">${(object.employee_id.company_id.email or'')|safe }</field>
+            <field name="email_to">${(object.employee_id.work_email)|safe}</field>
+            <field name="subject">Refus de demande de conge :  ${object.name}</field>
+            <field name="model_id" ref="model_hr_holidays"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.employee_id.user_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Bonjour ,</p>
+                    <p>Votre demande de congé référence :${object.name} a été réfusée. </p>
+                    <p>Cordialement !!!</p>
+                    <p></p>
+                ]]>
+
+            </field>
+        </record>
+
+
+
+        <record id="email_template_leave_delay" model="mail.template">
+            <field name="name">Delay Leave Request</field>
+            <field name="email_from">${(object.employee_id.company_id.email or'')|safe }</field>
+            <field name="email_to">${(object.employee_id.parent_id.work_email)|safe}</field>
+            <field name="subject">Demande de report de congé :  ${object.name}</field>
+            <field name="model_id" ref="model_hr_holidays"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.employee_id.user_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Bonjour ,</p>
+                    <p>Votre collaborateur ${'object.employee_id.name'} a demandé le report de son congé (Réf : ${object.name} )
+                     initialement prévu du ${'object.last_date_from'} au ${'object.last_date_to'}
+                    <p>Cordialement !!!</p>
+                    <p></p>
+                ]]>
+
+            </field>
+        </record>
+    </data>
+</odoo>
